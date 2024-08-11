@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.title-section {
+    background-color: #f2f2f2;
+    padding-top: 10px;
+}
+.dash-title {
+    color: #1F736A;
+    font-size: 40px;
+    font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-weight: bold;
+}
+
+.break-line {
+    color: #F2D5A0;
+    background-color: #F2D5A0;
+    height: 2px;
+}
+
+.navbar {
+    margin-left: 110px;
+}
+
+.ms-2 {
+    background-color: #A6A6A6;
+    color: #262626;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.ms-2:hover {
+    background-color: #cccccc;
+    color: #262626;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.ms-2.active {
+    background-color: #1F736A;
+    color: white;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.buttons {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#btn-fruits {
+    height: 40px;
+    width: 150px;
+    margin-right: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    background: #1F736A;
+    color: white;
+    border: none;
+}
+
+#btn-vegetables {
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    color: #1F736A;
+    border-color: #1F736A;
+}
+
+#category-input {
+    width: 100%;
+    height: 40px;
+}
+
+#graph-1 {
+    height: 920px;
+    margin-bottom: 20px;
+}
+
+#v-graph-1 {
+    height: 920px;
+    margin-bottom: 20px;
+}
+
+.graphs {
+    border-radius: 12px;
+    overflow: hidden;
+}
