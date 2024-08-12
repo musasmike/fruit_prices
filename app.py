@@ -7,10 +7,16 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
+import base64
 
 # ------------------------------------------------------------------------------------------------------------------
 # APP INITIALIZATION
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], use_pages=True)
+
+
+# Insert an image
+image_file = 'assets/mmk_logo_desgin.png'
+encoded_image = base64.b64encode(open(image_file, 'rb').read()).decode('ascii')
 
 
 # ------------------------------------------------------------------------------------------------------------------
@@ -24,7 +30,7 @@ sidebar = dbc.Navbar([
         className='ms-2'
     ) for page in dash.page_registry.values()
 ],
-    className='navbar'
+    className='navbar',
 )
 
 
@@ -38,7 +44,7 @@ app.layout = html.Div(children=[
             html.Div('U.S.A. FRUITS & VEGETABLES PRICES', id='title', className='dash-title')
         ],
             width={'size': 10},
-            xs=8, sm=8, md=8, lg=10, xl=10
+            xs=12, sm=8, md=8, lg=10, xl=10
         )
     ],
         className='title-section',
@@ -59,7 +65,7 @@ app.layout = html.Div(children=[
             sidebar,
         ],
             width={'size': 4, 'offset': 1},
-            xs=10, sm=10, md=10, lg=4, xl=4
+            xs=12, sm=10, md=10, lg=4, xl=4
         ),
 
     ],
@@ -83,16 +89,31 @@ app.layout = html.Div(children=[
     dbc.Row([
         # Made by
         dbc.Col([
-            html.Div("Made by Mike Musas")
+            html.Div([
+                # Copyright
+                html.Div('Made by', style={'margin-right': '5px'}),
+                html.Div('Mike Musas', style={'margin-right': '5px'}),
+                html.Div('|', style={'margin-right': '5px'}),
+
+                # Data Source
+                html.Div('Data Source:', style={'margin-right': '5px'}),
+                html.Div(html.A("data.gov", href='https://catalog.data.gov/dataset/fruit-and-vegetable-prices',
+                                style={'color': '#F2A444', 'font-family': 'Lato', 'font-weight': 'bold'}))
+
+            ], className='copyright')
         ],
-            width={'size': 9}
+            width={'size': 9},
+            xs=12, sm=8, md=8, lg=9, xl=9
         ),
 
         # Logo
         dbc.Col([
-            html.Div("Logo")
+            html.Div(html.Img(src='data:image/png;base64,{}'.format(encoded_image)),
+                     className='logo'
+                     )
         ],
-            width={'size': 1}
+            width={'size': 1},
+            xs=4, sm=2, md=2, lg=1, xl=1
         )
     ],
         justify='center'
